@@ -1,4 +1,4 @@
-./app/key.js
+key.js
 
 node_modules/
 ./app/bundle.js
