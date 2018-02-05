@@ -3,3 +3,4 @@ node_modules/
 ./app/bundle.js.map
 
 ./key.js
+key.js
