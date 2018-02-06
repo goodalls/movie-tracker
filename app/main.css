@@ -5,3 +5,9 @@
 #main {
   text-align: center;
 }
+
+.Card {
+  border: 2px solid blue;
+}
+
+

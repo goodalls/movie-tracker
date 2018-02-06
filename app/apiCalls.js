@@ -10,4 +10,13 @@ const fetchParse = async (url) => {
   return parsed;
 };
 
-export default { fetchParse, test };
+const movieCleaner = (movies) => {
+  return movies.results.map((movie) => {
+    return {
+      title: movie.title,
+      poster: movie.poster_path
+    }
+  })
+}
+
+export default { fetchParse, test, movieCleaner };
