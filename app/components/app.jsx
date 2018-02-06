@@ -13,11 +13,15 @@ export default class App extends Component {
   }
 
   componentDidMount = async () => {
+    this.fetchMovies()
+  };
+  
+  fetchMovies = async () => {
     const {movies} = this.state;
     const testRun = await api.fetchParse(api.test);
     const moviesArray = api.movieCleaner(testRun);
     this.setState({movies: [...movies, ...moviesArray]})
-  };
+  }
 
   render() {
     const { movies } = this.state
