@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
 import Header from './Header/Header';
-import CardContainer from './CardContainer/CardContainer'
+import MovieIndex from './MovieIndex';
+import api from '../apiCalls';
 
 export default class App extends Component {
   constructor() {
     super();
   }
 
+  componentDidMount = async () => {
+    const testRun = await api.fetchParse(api.test);
+    console.log(testRun);
+  };
+
   render() {
     return (
       <div>
         <Header />
-        <CardContainer />
+        <MovieIndex />
       </div>
     );
   }
