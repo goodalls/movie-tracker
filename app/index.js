@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app';
+import App from './components/app.jsx';
 import MovieIndex from './components/movieIndex';
 import { BrowserRouter } from 'react-router-dom';
 

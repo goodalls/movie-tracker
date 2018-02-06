@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
+import Card from './Card/Card'
 
-export default class MovieIndex extends Component {
-  constructor() {
-    super();
-  }
+const MovieIndex = ({movies}) => {
 
-  render() {
-    return (
-      <div>
-      MOVIES
-      </div>
-    )
-  }
+
+  const elements = movies.map((movie, index)=>{
+    return <Card title={movie.title} key={index}/>
+  })
+
+  
+  return (
+    <div>
+    {elements}
+    </div>
+  )
+  
 }
+export default MovieIndex;

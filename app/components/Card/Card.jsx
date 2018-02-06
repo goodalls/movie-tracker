@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+// import './Card.css';
 
-const Card = () => {
+const Card = ({title}) => {
   return (
-    <div>
-      THIS IS A CARD BRAH!!
+    <div className='Card'>
+      <h2> {title} </h2>
     </div>
   )
 }

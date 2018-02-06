@@ -6,18 +6,25 @@ import api from '../apiCalls';
 export default class App extends Component {
   constructor() {
     super();
+    this.state = {
+      movies: [],
+      favorites: []
+    }
   }
 
   componentDidMount = async () => {
+    const {movies} = this.state;
     const testRun = await api.fetchParse(api.test);
-    console.log(testRun);
+    const moviesArray = api.movieCleaner(testRun);
+    this.setState({movies: [...movies, ...moviesArray]})
   };
 
   render() {
+    const { movies } = this.state
     return (
       <div>
         <Header />
-        <MovieIndex />
+        <MovieIndex movies={movies}/>
       </div>
     );
   }
