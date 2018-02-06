@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Header from './Header/Header';
+import CardContainer from './CardContainer/CardContainer'
 
 export default class App extends Component {
   constructor() {
@@ -8,9 +10,9 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <h1>Movie Watcher</h1>
-        <h1>Movie Watcher</h1>
+        <Header />
+        <CardContainer />
       </div>
-    )
+    );
   }
 }
