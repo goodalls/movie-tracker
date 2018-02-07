@@ -14,6 +14,7 @@ export default class App extends Component {
 
   componentDidMount = async () => {
     this.fetchMovies()
+    this.props.getMovies();
   };
   
   fetchMovies = async () => {
@@ -33,3 +34,11 @@ export default class App extends Component {
     );
   }
 }
+
+const mapStateToProps = (store) => ({
+  movies: store.moviesReducer
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  getMovies: (movies) => dispatch(addMovies(this.state.movies))
+})

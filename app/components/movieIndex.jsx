@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Card from './Card/Card'
+import Card from './Card/Card';
 
-const MovieIndex = ({movies}) => {
 
+const MovieIndex = () => {
+  const { movies } = this.props;
 
   const elements = movies.map((movie, index)=>{
     return <Card title={movie.title} poster={movie.poster} key={index}/>
@@ -15,5 +16,6 @@ const MovieIndex = ({movies}) => {
     </div>
   )
 }
+
 
 export default MovieIndex;
