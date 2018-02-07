@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Header from './Header/Header';
-import MovieIndex from './MovieIndex';
+import MovieIndex from './Movies/MovieIndex';
 import api from '../apiCalls';
+import { connect } from 'react-redux'
 
-export default class App extends Component {
+class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -14,7 +15,7 @@ export default class App extends Component {
 
   componentDidMount = async () => {
     this.fetchMovies()
-    this.props.getMovies();
+    // this.props.getMovies();
   };
   
   fetchMovies = async () => {
@@ -22,6 +23,10 @@ export default class App extends Component {
     const testRun = await api.fetchParse(api.test);
     const moviesArray = api.movieCleaner(testRun);
     this.setState({movies: [...movies, ...moviesArray]})
+    //call addMovies(moviesArray)  
+    //put it in the store
+    //create an action - load movies -
+    // whose job is to take the movies and put it in the store
   }
 
   render() {
@@ -40,5 +45,7 @@ const mapStateToProps = (store) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  getMovies: (movies) => dispatch(addMovies(this.state.movies))
+  addMovies: (movies) => dispatch(addMovies(movies))
 })
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
