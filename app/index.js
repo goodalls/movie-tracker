@@ -14,6 +14,6 @@ const router = (
 );
 
 ReactDOM.render(
-  <Provider store={store}>router</Provider>,
+  <Provider store={store}>{router}</Provider>,
   document.getElementById('main')
 );
