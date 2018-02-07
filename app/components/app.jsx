@@ -22,8 +22,8 @@ class App extends Component {
     const {movies} = this.state;
     const testRun = await api.fetchParse(api.test);
     const moviesArray = api.movieCleaner(testRun);
-    this.setState({movies: [...movies, ...moviesArray]})
-    //call addMovies(moviesArray)  
+    // this.setState({movies: [...movies, ...moviesArray]})
+    this.props.addMovies(moviesArray)  
     //put it in the store
     //create an action - load movies -
     // whose job is to take the movies and put it in the store
