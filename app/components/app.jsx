@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header/Header';
-import MovieIndex from './MovieIndex';
+import MovieIndex from './Movies/MovieIndex';
 import api from '../apiCalls';
 
 export default class App extends Component {
