@@ -1,5 +1,7 @@
-export const addFavMovie = (id) => ({
-  type: 'ADD_FAV_MOVIE', 
-  id
-});
+export const getMovies() {
+  return { 
+    type: 'GET_MOVIES',
+    movies
+  }
+}
 

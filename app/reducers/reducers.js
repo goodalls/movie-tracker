@@ -1,7 +1,13 @@
-// click on movies and favorite them
-const movieReducer = (state =[], action) => {
+import api from '../apiCalls';
+
+const moviesReducer(state=[], action) {
   switch(action.type) {
-    case 'ADD_FAV_MOVIE' :
-    return [...state, {id}]
+    case 'GET_MOVIES':
+      const testRun = await api.fetchParse(api.test);
+      const moviesArray = api.movieCleaner(testRun);
+      return([...state, ...moviesArray])
+    default:
+      return state
   }
-}  
+}
+
