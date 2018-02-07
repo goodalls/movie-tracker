@@ -3,6 +3,7 @@ import Header from './Header/Header';
 import MovieIndex from './Movies/MovieIndex';
 import api from '../apiCalls';
 import { connect } from 'react-redux'
+import {addMovies} from '../actions/actions'
 
 class App extends Component {
   constructor() {
@@ -21,9 +22,9 @@ class App extends Component {
   fetchMovies = async () => {
     const {movies} = this.state;
     const testRun = await api.fetchParse(api.test);
-    const moviesArray = api.movieCleaner(testRun);
-    this.setState({movies: [...movies, ...moviesArray]})
-    //call addMovies(moviesArray)  
+    const moviesArray = await api.movieCleaner(testRun);
+    // this.setState({movies: [...movies, ...moviesArray]})
+    await this.props.addMovies(moviesArray);  
     //put it in the store
     //create an action - load movies -
     // whose job is to take the movies and put it in the store
